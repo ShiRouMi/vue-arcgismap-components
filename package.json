@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/ShiRouMi/vue-arcgismap-components.git"
   },
   "scripts": {
     "dev": "vite",
