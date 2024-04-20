@@ -1,16 +1,29 @@
 {
   "name": "vue-arcgismap-components",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.11",
   "type": "module",
-  "main": "dist/vue-arcgismap.umd.cjs",
+  "main": "./dist/vue-arcgismap.umd.cjs",
+  "module": "./dist/vue-arcgismap.js",
   "files": [
     "dist/*"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ShiRouMi/vue-arcgismap-components.git"
+  "styles": [
+    "./dist/style.css" 
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/vue-arcgismap.js",
+      "require": "./vue-arcgismap.umd.cjs"
+    },
+    "./dist/style.css": "./dist/style.css"
   },
+  "keywords": [
+    "vue",
+    "arcgis",
+    "map",
+    "component"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -22,6 +35,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "ncp": "^2.0.0",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vue-tsc": "^2.0.6"

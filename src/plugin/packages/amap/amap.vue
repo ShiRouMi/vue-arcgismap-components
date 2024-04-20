@@ -4,49 +4,49 @@
   </div>
 </template>
 <script setup lang="ts">
-import { provide, defineOptions, onBeforeUnmount } from 'vue'
-import Map from '@arcgis/core/Map'
-import { propsType } from './props'
+import { provide, defineOptions, onBeforeUnmount } from "vue";
+import Map from "@arcgis/core/Map";
+import { propsType } from "./props";
 import {
   useRegister,
   provideData,
   provideKey,
   type IProvideType,
-  type TRegisterFn
-} from '../../mixins'
+  type TRegisterFn,
+} from "../../mixins";
 
 defineOptions({
-  name: 'ArcgisMap',
-  inheritAttrs: false
-})
+  name: "ArcgisMap",
+  inheritAttrs: false,
+});
 
-const props = defineProps(propsType)
+const props = defineProps(propsType);
 
-let _map: Map
+let _map: Map;
 const getInstance = useRegister(
   (options: any) => {
     return new Promise((resolve) => {
-      _map = new Map(options)
-      provideData.$amapComponent = _map
-      resolve(_map)
-    })
+      _map = new Map(options);
+      provideData.$amapComponent = _map;
+      resolve(_map);
+    });
   },
   {
-    isRoot: true
+    isRoot: true,
   }
-)
+);
 
 onBeforeUnmount(() => {
   if (_map) {
-    _map.destroy()
-    _map = null as any
+    _map.destroy();
+    _map = null as any;
   }
-})
+});
 defineExpose({
-  getInstance
-})
+  getInstance,
+});
 </script>
-<style scoped>
+<style>
 div {
   width: 100vw;
   height: 100vh;
