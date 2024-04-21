@@ -1,7 +1,8 @@
 /**
  * https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-MarkerSymbol.html
  */
-export const propsType = {
+import { buildProps } from "../../../utils/buildHelper";
+export const propsType = buildProps({
   angle: {
     type: Number,
   },
@@ -14,4 +15,4 @@ export const propsType = {
   yoffset: {
     type: Number,
   },
-};
+});

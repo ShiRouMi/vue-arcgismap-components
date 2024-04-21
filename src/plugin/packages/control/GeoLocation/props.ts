@@ -1,4 +1,5 @@
-export const propsType = {
+import { buildProps } from "../../../utils/buildHelper";
+export const propsType = buildProps({
   container: {
     type: String,
   },
@@ -14,4 +15,4 @@ export const propsType = {
     type: String,
     default: "bottom-right",
   },
-};
+});

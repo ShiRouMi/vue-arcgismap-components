@@ -28,6 +28,7 @@ export interface IProvideType {
   [key: string]: any;
 }
 
+// useRegister 传入的第二次参数类型
 interface TInitComponentProps {
   // 属性名重定向
   propsRedirect?: Record<string, string>;
@@ -74,6 +75,7 @@ export const useRegister = <T>(
     }
     unregisterEvents();
 
+    // 看组件自身是否配置了 destroyComponent
     if (params.destroyComponent) {
       params.destroyComponent();
     } else {
@@ -116,8 +118,13 @@ export const useRegister = <T>(
   };
 
   const propsRedirect = params.propsRedirect || {};
+  /**
+   * 从传入的 props 中筛选和转换特定属性，存储到 propsCache 并返回
+   * @returns propsCache
+   */
   const convertProps = () => {
     const propsCache: Record<string, any> = {};
+    // 额外参数，用于在初始化组件时提供prop中未定义的属性
     if (props.extraOptions) {
       Object.assign(propsCache, props.extraOptions);
     }
@@ -135,6 +142,9 @@ export const useRegister = <T>(
   };
 
   const converters = params.converts || {};
+  /**
+   * 根据给定的params.converts对象（一个函数映射表）对特定属性进行转换
+   */
   const convertSignalProp = (key: string, sourceData: any) => {
     if (converters && converters[key]) {
       return converters[key].call(this, sourceData);
@@ -149,7 +159,6 @@ export const useRegister = <T>(
       __currentComponent.constructor === Object
         ? __currentComponent?.mapView
         : __currentComponent;
-    // TODO：读取了 透传的事件，还有一些透传的属性呢？!!! 比如 class 这种，直接在模版上配置？inheritAttrs 一般都设置 false 了
     Object.keys(attrs).forEach((key) => {
       if (eventReg.test(key)) {
         const eventKey = convertEventToLowerCase(key);

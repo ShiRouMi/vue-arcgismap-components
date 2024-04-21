@@ -1,5 +1,6 @@
 // https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleBar.html
-export const propsType = {
+import { buildProps } from "../../../utils/buildHelper";
+export const propsType = buildProps({
   container: {
     type: String,
   },
@@ -25,4 +26,4 @@ export const propsType = {
     type: Boolean,
     default: "true",
   },
-};
+});

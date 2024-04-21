@@ -1,4 +1,5 @@
-export const propsType = {
+import { buildProps } from "../../../../utils/buildHelper";
+export const propsType = buildProps({
   id: {
     type: String,
   },
@@ -16,4 +17,4 @@ export const propsType = {
     type: Boolean,
     default: true,
   },
-};
+});

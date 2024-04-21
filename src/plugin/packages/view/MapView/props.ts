@@ -2,7 +2,8 @@
  * 包含 arcgis/core4 mapView 和 map 的常用参数
  * https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#properties-summary
  */
-export const propsType = {
+import { buildProps } from "../../../utils/buildHelper";
+export const propsType = buildProps({
   container: {
     type: String,
   },
@@ -29,4 +30,4 @@ export const propsType = {
   layers: {
     type: Array,
   },
-};
+});

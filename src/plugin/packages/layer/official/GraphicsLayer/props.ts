@@ -1,4 +1,5 @@
-export const propsType = {
+import { buildProps } from "../../../../utils/buildHelper";
+export const propsType = buildProps({
   graphics: {
     type: Object,
   },
@@ -8,4 +9,4 @@ export const propsType = {
   visible: {
     type: Boolean,
   },
-};
+});

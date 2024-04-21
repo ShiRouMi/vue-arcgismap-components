@@ -21,7 +21,7 @@ defineOptions({
   name: "ArcgisMapView",
   inheritAttrs: false,
 });
-const needInitComponents: TRegisterFn[] = [];
+const needInitComponents: TRegisterFn[] = []; // 需要注册的组件列表
 const provideData: IProvideType = {
   __component: undefined,
   addChildComponent(cb) {
@@ -30,7 +30,7 @@ const provideData: IProvideType = {
   isDestroy: false,
 };
 
-provide(provideKey, provideData); // 父组件 provide
+provide(provideKey, provideData); // 父组件 provide， 供子组件访问
 
 const props = defineProps(propsType);
 const emits = defineEmits(["init"]);
@@ -39,7 +39,7 @@ const mapDomId = ref<string>(props.container || guid());
 let mapView: MapView;
 let map: Map;
 
-//TODO:
+// TODO： 优化
 const operateViewWidgets = () => {
   mapView.ui.remove(["zoom", "attribution"]);
 };
@@ -74,14 +74,6 @@ const { $$getInstance } = useRegister(
   }
 );
 
-onBeforeUnmount(() => {
-  if (mapView && map) {
-    map.destroy();
-    mapView.destroy();
-    mapView = null as any;
-    map = null as any;
-  }
-});
 defineExpose({
   getInstance: $$getInstance,
 });
