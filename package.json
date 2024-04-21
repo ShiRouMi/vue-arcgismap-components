@@ -1,7 +1,7 @@
 {
   "name": "vue-arcgismap-components",
   "private": false,
-  "version": "0.0.13",
+  "version": "0.0.14",
   "type": "module",
   "main": "./dist/vue-arcgismap.umd.cjs",
   "module": "./dist/vue-arcgismap.js",
@@ -14,7 +14,7 @@
   "exports": {
     ".": {
       "import": "./dist/vue-arcgismap.js",
-      "require": "./vue-arcgismap.umd.cjs"
+      "require": "./dist/vue-arcgismap.umd.cjs"
     },
     "./dist/style.css": "./dist/style.css"
   },

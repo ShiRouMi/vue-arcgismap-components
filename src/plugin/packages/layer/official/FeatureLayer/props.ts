@@ -14,5 +14,6 @@ export const propsType = {
   },
   visible: {
     type: Boolean,
+    default: true,
   },
 };
