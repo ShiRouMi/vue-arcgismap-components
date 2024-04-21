@@ -1,7 +1,7 @@
 {
   "name": "vue-arcgismap-components",
   "private": false,
-  "version": "0.0.11",
+  "version": "0.0.13",
   "type": "module",
   "main": "./dist/vue-arcgismap.umd.cjs",
   "module": "./dist/vue-arcgismap.js",
@@ -9,7 +9,7 @@
     "dist/*"
   ],
   "styles": [
-    "./dist/style.css" 
+    "./dist/style.css"
   ],
   "exports": {
     ".": {
@@ -27,7 +27,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
     "@arcgis/core": "^4.29.10",
@@ -35,9 +37,11 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
-    "ncp": "^2.0.0",
+    "@vuepress/bundler-vite": "^2.0.0-rc.9",
+    "@vuepress/theme-default": "^2.0.0-rc.25",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
-    "vue-tsc": "^2.0.6"
+    "vue-tsc": "^2.0.6",
+    "vuepress": "^2.0.0-rc.9"
   }
 }

@@ -10,13 +10,13 @@ import { defineOptions, ref, onBeforeUnmount, nextTick, provide } from "vue";
 import MapView from "@arcgis/core/views/MapView";
 import Map from "@arcgis/core/Map";
 import { propsType } from "./props";
-import guid from "../../utils/guid";
+import guid from "../../../utils/guid";
 import {
   useRegister,
   provideKey,
   type IProvideType,
   type TRegisterFn,
-} from "../../mixins";
+} from "../../../mixins";
 defineOptions({
   name: "ArcgisMapView",
   inheritAttrs: false,
@@ -39,12 +39,6 @@ const mapDomId = ref<string>(props.container || guid());
 let mapView: MapView;
 let map: Map;
 
-// 这里有必要吗？
-const bindEvents = () => {
-  mapView.on("click", () => {});
-  mapView.on("drag", () => {});
-};
-
 //TODO:
 const operateViewWidgets = () => {
   mapView.ui.remove(["zoom", "attribution"]);
@@ -66,7 +60,6 @@ const { $$getInstance } = useRegister(
         mapView,
       };
       operateViewWidgets();
-      bindEvents();
       resolve({
         mapView,
         map,
@@ -94,6 +87,9 @@ defineExpose({
 });
 </script>
 <style>
+.esri-view {
+  --esri-view-outline: none !important;
+}
 .map-view {
   height: 100%;
   position: relative;
@@ -106,3 +102,4 @@ defineExpose({
   width: 100%;
 }
 </style>
+../../../utils/guid../../../mixins

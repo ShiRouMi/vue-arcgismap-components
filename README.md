@@ -1,10 +1,11 @@
 # vue-arcgismap-components
 
-基于 vue 3.x 和 ArcGIS Maps SDK for JavaScript 4.x 的地图组件库
+基于 Vue 3.x 和 ArcGIS Maps SDK for JavaScript 4.x (@arcgis/core)的地图组件库
 
 ## 安装
 
 ```
+npm i @arcgis/core
 npm i vue-arcgismap-components
 ```
 

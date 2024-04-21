@@ -21,6 +21,9 @@ export default defineConfig({
         "@arcgis/core/widgets/Locate",
         "@arcgis/core/layers/FeatureLayer",
         "@arcgis/core/views/MapView",
+        "@arcgis/core/widgets/ScaleBar",
+        "@arcgis/core/layers/GraphicsLayer",
+        "@arcgis/core/symbols/MarkerSymbol",
       ],
       output: {
         // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
@@ -29,7 +32,10 @@ export default defineConfig({
           "@arcgis/core/Map": "ArcgisCoreMap",
           "@arcgis/core/views/MapView": "ArcgisCoreMapView",
           "@arcgis/core/widgets/Locate": "ArcgisCoreLocate",
-          "@arcgis/core/layers/FeatureLayer": "ArcgisCoreMap",
+          "@arcgis/core/layers/FeatureLayer": "ArcgisCoreFeatureLayer",
+          "@arcgis/core/widgets/ScaleBar": "ArcgisCoreScaleBar",
+          "@arcgis/core/layers/GraphicsLayer": "ArcgisCoreGraphicsLayer",
+          "@arcgis/core/symbols/MarkerSymbol": "ArcgisCoreMarkerSymbol",
         },
       },
     },

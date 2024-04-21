@@ -1,15 +1,18 @@
 export const propsType = {
   id: {
-    type: String
+    type: String,
   },
   url: {
-    type: String
+    type: String,
   },
   outFields: {
     type: Array,
-    default: ['*']
+    default: ["*"],
   },
   definitionExpression: {
-    type: String
-  }
-}
+    type: String,
+  },
+  visible: {
+    type: Boolean,
+  },
+};
