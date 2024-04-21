@@ -44,12 +44,12 @@ const click = (e) => {
 
 ### 事件
 
-| 事件名 | 说明                                                                                                                                | Type     |
+| 事件名 | 说明 Type                                                                                                                           |
 | ------ | ----------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | init   | 该实例化后，参数为拥有 map、view 实例的对象                                                                                         | Function |
 | --     | 拥有与 MapView 上一样的 Events https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#events-summary | Function |
 
-### 方法
+### ref 可用方法
 
 | 函数            | 返回                      | 说明               |
 | --------------- | ------------------------- | ------------------ |
@@ -83,7 +83,7 @@ const locate = (position) => {
 | init   | 该实例化后，参数为拥有 map、view 实例的对象                                                                                         | Function |
 | --     | 拥有与 Locate 上一样的 Events https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Locate.html#events-summary | Function |
 
-### 方法
+### ref 可用方法
 
 | 函数            | 返回        | 说明             |
 | --------------- | ----------- | ---------------- |
@@ -105,7 +105,7 @@ const locate = (position) => {
 | init   | 该实例化后，参数为拥有 map、view 实例的对象                                                                                                    | Function |
 | --     | 拥有与 FeatureLayer 上一样的 Events https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#events-summary | Function |
 
-### 方法
+### ref 可用方法
 
 | 函数            | 返回              | 说明                   |
 | --------------- | ----------------- | ---------------------- |

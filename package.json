@@ -1,7 +1,7 @@
 {
   "name": "vue-arcgismap-components",
   "private": false,
-  "version": "0.0.14",
+  "version": "0.0.15",
   "type": "module",
   "main": "./dist/vue-arcgismap.umd.cjs",
   "module": "./dist/vue-arcgismap.js",
